@@ -5,6 +5,8 @@ import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
 import userRoutes from "./routes/users.js";
+import albumRoutes from "./routes/albums.js";
+import photosRoutes from "./routes/photos.js";
 import dotnev from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
@@ -23,6 +25,8 @@ app.use(cors());
 
 /* ROUTES */
 app.use("/users", userRoutes);
+app.use("/albums", albumRoutes);
+app.use("/photos", photosRoutes);
 
 /* MONGOOSE SETUP */
 set("strictQuery", false);
