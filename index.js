@@ -10,6 +10,10 @@ import photosRoutes from "./routes/photos.js";
 import dotnev from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
+import User from "./models/User.js";
+import Album from "./models/Album.js";
+import Photo from "./models/Photo.js";
+import { users, albums, photos } from "./data/index.js";
 
 /* CONFIGURATIONS */
 
@@ -37,5 +41,10 @@ connect(process.env.MONGO_URL, {
 })
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+
+    /* ADD DATA ONE TIME */
+    // User.insertMany(users);
+    // Album.insertMany(albums);
+    // Photo.insertMany(photos);
   })
   .catch((err) => console.log(`${err} did not connect`));
