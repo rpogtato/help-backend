@@ -1,4 +1,4 @@
-import Album from "../models/User.js";
+import Album from "../models/Album.js";
 
 /* READ */
 export async function getUserAlbums(req, res) {

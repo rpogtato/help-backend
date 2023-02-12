@@ -7,7 +7,7 @@ import { fileURLToPath } from "url";
 import userRoutes from "./routes/users.js";
 import albumRoutes from "./routes/albums.js";
 import photosRoutes from "./routes/photos.js";
-import dotnev from "dotenv";
+import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
 import User from "./models/User.js";
@@ -18,7 +18,7 @@ import { users, albums, photos } from "./data/index.js";
 /* CONFIGURATIONS */
 
 const app = express();
-dotnev.config();
+dotenv.config();
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
