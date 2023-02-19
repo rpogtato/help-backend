@@ -4,10 +4,11 @@ const router = Router();
 
 /* READ */
 router.get("/:userId", getUserAlbums);
-router.get("/:id/delete", deleteAlbum);
 
 /* CREATE */
-router.post("/:userId/post", newAlbum);
+router.post("/post", newAlbum);
 
 /* DELETE */
+router.delete("/:id/delete", deleteAlbum);
+
 export default router;
