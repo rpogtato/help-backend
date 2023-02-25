@@ -6,7 +6,7 @@ const router = Router();
 router.get("/:userId", getUserAlbums);
 
 /* CREATE */
-router.post("/post", newAlbum);
+router.post("/post/:userId", newAlbum);
 
 /* DELETE */
 router.delete("/:id/delete", deleteAlbum);

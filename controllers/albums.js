@@ -14,7 +14,7 @@ export async function getUserAlbums(req, res) {
 /* DELETE */
 export async function deleteAlbum(req, res) {
   try {
-    const { id } = req.params;
+    const { id } = req.body;
     const album = await Album.findById(id);
     const deletedAlbum = await Album.deleteOne(album);
     if (deletedAlbum.deletedCount === 0) {
@@ -29,7 +29,8 @@ export async function deleteAlbum(req, res) {
 /* CREATE */
 export async function newAlbum(req, res) {
   try {
-    const { title, userId } = req.body;
+    const { userId } = req.params;
+    const { title } = req.body;
     const newAlbum = new Album({ userId, title });
     const savedAlbum = await newAlbum.save();
     res.status(201).json(savedAlbum);
