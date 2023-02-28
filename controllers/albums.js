@@ -14,7 +14,7 @@ export async function getUserAlbums(req, res) {
 /* DELETE */
 export async function deleteAlbum(req, res) {
   try {
-    const { id } = req.body;
+    const { id } = req.params;
     const album = await Album.findById(id);
     const deletedAlbum = await Album.deleteOne(album);
     if (deletedAlbum.deletedCount === 0) {
